@@ -6,11 +6,14 @@ import "./styles/index.css"
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { GoogleOAuthProvider } from '@react-oauth/google';  
+// require("dotenv").config({path:"../.env"});
 
+
+// console.log(process.env.REACT_APP_CLIENTID)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <GoogleOAuthProvider clientId="1070630615685-invc8ucp0ku43goaqkrm9jjnm3u8ro32.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENTID}>
       <BrowserRouter>
         <React.StrictMode>
           <App />
